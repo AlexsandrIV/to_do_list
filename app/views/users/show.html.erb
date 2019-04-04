@@ -11,5 +11,38 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit you profile', edit_user_path(@user) %>
+<%= link_to "Log out", logout_path, method: "delete" %>
+<%arr = issues_user(@user)%>
+<%= link_to 'create new issue', new_issue_path %>
+<p>Список ваших дел:</p>
+<%if arr.nil? %>
+<p>Cписок дел пуст ++ Add place create</p>
+
+<%else%>
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Subject</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>  	
+  	
+      <% arr.each do |issue| %>
+        <tr>
+          <td><%= issue.number %></td>
+          <td><%= issue.subject %></td>
+          <td><%= link_to 'Show', issue %></td>
+          <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+          <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are   you sure want delete this issue?' } %></td>  
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
