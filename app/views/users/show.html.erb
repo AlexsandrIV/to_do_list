@@ -32,9 +32,9 @@
           <td><%= issue.number %></td>
           <td><%= issue.subject %></td>          
           <% unless issue.status %>   
-          <td><%= check_box_tag('name', '1', issue.status) %></td>
+          <td>at work</td>
           <%else%>       
-          <td><%= issue.status %></td>
+          <td>is ready</td>
           <%end%>
 
           <td><%= link_to 'Show', issue %></td>

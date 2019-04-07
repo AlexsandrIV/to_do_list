@@ -11,6 +11,8 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+/README.md
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
