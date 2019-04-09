@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ToDoList</title>
+    <title>To Do List</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,10 +10,13 @@
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      
-      
-    
+    <header class="navbar navbar-fixed-top navbar-inverse">    
+      <nav>
+        <div class="container">
+          <%= link_to "TO DO LIST", '#', id: "logo" %>    
+        </div>
+      </nav>
+
     </header>
     <div class="container">
       <%= yield %>

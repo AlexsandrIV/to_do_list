@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
-
-<header class="navbar navbar-fixed-top navbar-inverse">      
-      
+<header class="navbar navbar-fixed-top navbar-inverse">    
       <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Edit you profile', edit_user_path(@user) %></li>
-          <li><%= link_to "Log out", logout_path, method: "delete"%></li>
-        </ul>
+        <div class="container">
+          <%= link_to "TO DO LIST", '#', id: "logo" %>          
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Edit you profile', edit_user_path(@user) %></li>
+            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          </ul>
+        </div>
       </nav>
-</header>
 
+    </header>
+ 
 <%arr = issues_user(@user)%>
 
 
@@ -49,4 +51,4 @@
   </tbody>
 </table>
 
-<%= link_to 'create new issue', new_issue_path, class: "btn btn-primary btn-md" %>
+<%= link_to 'Create new issue', new_issue_path, class: "btn btn-primary" %>
